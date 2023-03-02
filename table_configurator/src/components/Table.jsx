@@ -16,7 +16,7 @@ const ANIM_SPEED = 12;
 export function Table(props) {
   const { nodes, materials } = useGLTF('./models/Table.gltf');
 
-  const {legs, legsColor, tableWidth, plateColor, tableThickness} = useConfigurator();
+  const {legs, legsColor, tableWidth, plateColor} = useConfigurator();
 
   const plate = useRef();
   const leftLegs = useRef();
@@ -36,7 +36,7 @@ export function Table(props) {
       plate.current.scale.lerp(targetScale, delta * ANIM_SPEED);
   
       const targetLeftPosition = new Vector3(-1.5 * tableWidthScale, 0, 0);
-      leftLegs.current.position.lerp(targetLeftPosition, delta * ANIM_SPEED);5
+      leftLegs.current.position.lerp(targetLeftPosition, delta * ANIM_SPEED);
   
       const targetRightPosition = new Vector3(1.5 * tableWidthScale, 0, 0);
       rightLegs.current.position.lerp(targetRightPosition, delta * ANIM_SPEED);

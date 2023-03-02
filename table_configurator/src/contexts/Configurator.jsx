@@ -3,23 +3,25 @@ import { createContext, useContext, useState } from "react";
 const ConfiguratorContext = createContext();
 
 export const ConfiguratorProvider = ({ children }) => {
-  const [legs, setLegs] = useState(0);
-  const [legsColor, setLegsColor] = useState("#777777");
-  const [tableWidth, setTableWidth] = useState(100);
+  const [shelfColor, setShelfColor] = useState("#ECECEC");
+
+  // const [legs, setLegs] = useState(0);
+  // const [legsColor, setLegsColor] = useState("#777777");
+  // const [tableWidth, setTableWidth] = useState(100);
   // const [tableThickness, settableThickness] = useState(10);
-  const [plateColor, setPlateColor] = useState("#ECECEC");
+  // const [plateColor, setPlateColor] = useState("#ECECEC");
 
   return (
     <ConfiguratorContext.Provider
       value={{
-        legs,
-        setLegs,
-        legsColor,
-        setLegsColor,
-        tableWidth,
-        setTableWidth,
-        plateColor,
-        setPlateColor,
+        // legs,
+        // setLegs,
+        // legsColor,
+        // setLegsColor,
+        // tableWidth,
+        // setTableWidth,
+        shelfColor,
+        setShelfColor,
         // tableThickness, 
         // settableThickness,
       }}

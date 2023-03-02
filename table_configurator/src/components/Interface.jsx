@@ -4,8 +4,10 @@ import {Box, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Slider
 import { useConfigurator } from "../contexts/Configurator";
 
 export const Interface = () => {
-  const { tableWidth, setTableWidth, legs, setLegs, legsColor, setLegsColor, plateColor, setPlateColor } =
-    useConfigurator();
+  // const { tableWidth, setTableWidth, legs, setLegs, legsColor, setLegsColor, plateColor, setPlateColor } =
+  //   useConfigurator();
+
+    const { shelfColor, setShelfColor } = useConfigurator();
   return (
     <Box
       sx={{
@@ -16,10 +18,10 @@ export const Interface = () => {
       p={3}
     >
       <Stack spacing={3}>
-        <Typography variant="caption">Table Configurator</Typography>
-        <Box className="glass" p={3}>
+        <Typography variant="caption">Shelf Configurator</Typography>
+        {/* <Box className="glass" p={3}>
           <FormControl>
-            <FormLabel>Table width</FormLabel>
+            <FormLabel>Shelf height</FormLabel>
             <Slider
               sx={{
                 width: "200px",
@@ -31,7 +33,7 @@ export const Interface = () => {
               valueLabelDisplay="auto"
             />
           </FormControl>
-        </Box>
+        </Box> */}
 
         {/* <Box className="glass" p={3}>
           <FormControl>
@@ -49,7 +51,7 @@ export const Interface = () => {
           </FormControl>
         </Box> */}
         
-        <Box className="glass" p={3}>
+        {/* <Box className="glass" p={3}>
           <FormControl>
             <FormLabel>Legs Layout</FormLabel>
             <RadioGroup
@@ -65,38 +67,38 @@ export const Interface = () => {
               <FormControlLabel value={2} control={<Radio />} label="Design" />
             </RadioGroup>
           </FormControl>
-        </Box>
+        </Box> */}
         <Box className="glass" p={3}>
           <FormControl>
-            <FormLabel>Legs Color</FormLabel>
+            <FormLabel>Shelf Color</FormLabel>
             <RadioGroup
-              value={legsColor}
-              onChange={(e) => setLegsColor(e.target.value)}
+              value={shelfColor}
+              onChange={(e) => setShelfColor(e.target.value)}
             >
               <FormControlLabel
-                value={"#777777"}
+                value={"#1e1e1e"}
                 control={<Radio />}
-                label="Black"
+                label="Brown"
               />
               <FormControlLabel
                 value={"#ECECEC"}
                 control={<Radio />}
-                label="Chrome"
+                label="White"
               />
               <FormControlLabel
                 value={"#C9BD71"}
                 control={<Radio />}
-                label="Gold"
+                label="Cream"
               />
-              <FormControlLabel
+              {/* <FormControlLabel
                 value={"#C9A3B9"}
                 control={<Radio />}
                 label="Pink Gold"
-              />
+              /> */}
             </RadioGroup>
           </FormControl>
         </Box>
-        <Box className="glass" p={3}>
+        {/* <Box className="glass" p={3}>
           <FormControl>
             <FormLabel>Plate Color</FormLabel>
             <RadioGroup
@@ -120,7 +122,7 @@ export const Interface = () => {
               />
             </RadioGroup>
           </FormControl>
-        </Box>
+        </Box> */}
       </Stack>
     </Box>
   );

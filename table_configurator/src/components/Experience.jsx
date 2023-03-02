@@ -4,7 +4,7 @@ import { Shelving } from "./Shelving";
 import { Table } from "./Table";
 
 export const Experience = () =>{
-    const {legs} = useConfigurator();
+    // const {legs} = useConfigurator();
     return (
         <>
         <Stage intensity={1.5} environment="city" shadows = {{type: 'accumulative', color: "#d9afd9", colorBlen: 2, opacity: 2}} adjustCamera={2}>
