@@ -33,7 +33,7 @@ export const Interface = () => {
           </FormControl>
         </Box>
 
-        <Box className="glass" p={3}>
+        {/* <Box className="glass" p={3}>
           <FormControl>
             <FormLabel>Table Thickness</FormLabel>
             <Slider
@@ -47,7 +47,8 @@ export const Interface = () => {
               valueLabelDisplay="auto"
             />
           </FormControl>
-        </Box>
+        </Box> */}
+        
         <Box className="glass" p={3}>
           <FormControl>
             <FormLabel>Legs Layout</FormLabel>
