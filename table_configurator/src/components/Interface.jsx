@@ -7,7 +7,7 @@ export const Interface = () => {
   // const { tableWidth, setTableWidth, legs, setLegs, legsColor, setLegsColor, plateColor, setPlateColor } =
   //   useConfigurator();
 
-    const { shelfColor, setShelfColor } = useConfigurator();
+    const { shelfColor, setShelfColor, shelfWidth, setShelfWidth, shelfHeight, setshelfHeight } = useConfigurator();
   return (
     <Box
       sx={{
@@ -19,21 +19,37 @@ export const Interface = () => {
     >
       <Stack spacing={3}>
         <Typography variant="caption">Shelf Configurator</Typography>
-        {/* <Box className="glass" p={3}>
+        <Box className="glass" p={3}>
           <FormControl>
             <FormLabel>Shelf height</FormLabel>
             <Slider
               sx={{
                 width: "200px",
               }}
-              min={50}
+              min={100}
               max={200}
-              value={tableWidth}
-              onChange={(e) => setTableWidth(e.target.value)}
+              value={shelfHeight}
+              onChange={(e) => setshelfHeight(e.target.value)}
               valueLabelDisplay="auto"
             />
           </FormControl>
-        </Box> */}
+        </Box>
+
+        <Box className="glass" p={3}>
+          <FormControl>
+            <FormLabel>Shelf width</FormLabel>
+            <Slider
+              sx={{
+                width: "200px",
+              }}
+              min={50}
+              max={200}
+              value={shelfWidth}
+              onChange={(e) => setShelfWidth(e.target.value)}
+              valueLabelDisplay="auto"
+            />
+          </FormControl>
+        </Box>
 
         {/* <Box className="glass" p={3}>
           <FormControl>

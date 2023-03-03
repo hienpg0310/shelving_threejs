@@ -11,15 +11,33 @@ import { useFrame } from "@react-three/fiber";
 import * as Three from "three";
 import { Vector3 } from "three";
 
+const ANIM_SPEED = 12;
+const ANIM_SPEED1 = 14;
+
 export function Shelving(props) {
   const { nodes, materials } = useGLTF('./models/shelving.gltf')
 
-  const {shelfColor} = useConfigurator();
+  const {shelfColor, shelfWidth, shelfHeight} = useConfigurator();
   const shelf = useRef();
 
   useEffect(()=>{
     materials.Material.color = new Three.Color(shelfColor); }, [shelfColor]); // chinh mau chan ban
 
+    useFrame((_state, delta) => {
+      const shelfWidthScale = shelfWidth / 100; 
+      const targetScale = new Vector3(shelfWidthScale, 1, 1); 
+  
+      shelf.current.scale.lerp(targetScale, delta * ANIM_SPEED);
+
+      const shelfHeightScale = shelfHeight / 100; 
+      const targetScale1 = new Vector3(1, shelfHeightScale, 1); 
+  
+      shelf.current.scale.lerp(targetScale1, delta * ANIM_SPEED1);
+    });
+    
+    // useFrame((_state, delta) => {
+      
+    // }); //chinh kich thuoc mat ban //chinh kich thuoc mat ban
 
   return (
     <group {...props} dispose={null}>

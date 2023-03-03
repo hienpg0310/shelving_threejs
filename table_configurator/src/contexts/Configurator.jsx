@@ -3,8 +3,9 @@ import { createContext, useContext, useState } from "react";
 const ConfiguratorContext = createContext();
 
 export const ConfiguratorProvider = ({ children }) => {
-  const [shelfColor, setShelfColor] = useState("#ECECEC");
-
+  const [shelfColor, setShelfColor] = useState("#1e1e1e");
+  const [shelfWidth, setShelfWidth] = useState(60);
+  const [shelfHeight, setshelfHeight] = useState(150);
   // const [legs, setLegs] = useState(0);
   // const [legsColor, setLegsColor] = useState("#777777");
   // const [tableWidth, setTableWidth] = useState(100);
@@ -18,7 +19,10 @@ export const ConfiguratorProvider = ({ children }) => {
         // setLegs,
         // legsColor,
         // setLegsColor,
-        // tableWidth,
+        shelfWidth,
+        setShelfWidth,
+        shelfHeight,
+        setshelfHeight,
         // setTableWidth,
         shelfColor,
         setShelfColor,
