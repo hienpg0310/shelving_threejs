@@ -7,7 +7,7 @@ export const Experience = () =>{
     // const {legs} = useConfigurator();
     return (
         <>
-        <Stage intensity={1.5} environment="city" shadows = {{type: 'accumulative', color: "#d9afd9", colorBlen: 2, opacity: 2}} adjustCamera={2}>
+        <Stage intensity={2.0} environment="dawn" shadows = {{type: 'accumulative', color: "#d9afd9", colorBlen: 2, opacity: 2}} adjustCamera={2}>
            <Shelving/>
             </Stage>
             <OrbitControls makeDefault

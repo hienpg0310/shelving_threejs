@@ -4,10 +4,8 @@ import {Box, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Slider
 import { useConfigurator } from "../contexts/Configurator";
 
 export const Interface = () => {
-  // const { tableWidth, setTableWidth, legs, setLegs, legsColor, setLegsColor, plateColor, setPlateColor } =
-  //   useConfigurator();
 
-    const { shelfColor, setShelfColor, shelfWidth, setShelfWidth, shelfHeight, setshelfHeight } = useConfigurator();
+    const { shelfColor, setShelfColor, shelfWidth, setShelfWidth, shelfDetph, setShelfDetph, shelfHeight, setshelfHeight } = useConfigurator();
   return (
     <Box
       sx={{
@@ -21,13 +19,13 @@ export const Interface = () => {
         <Typography variant="caption">Shelf Configurator</Typography>
         <Box className="glass" p={3}>
           <FormControl>
-            <FormLabel>Shelf height</FormLabel>
+            <FormLabel>Shelf Height</FormLabel>
             <Slider
               sx={{
                 width: "200px",
               }}
-              min={100}
-              max={200}
+              min={150}
+              max={800}
               value={shelfHeight}
               onChange={(e) => setshelfHeight(e.target.value)}
               valueLabelDisplay="auto"
@@ -37,7 +35,7 @@ export const Interface = () => {
 
         <Box className="glass" p={3}>
           <FormControl>
-            <FormLabel>Shelf width</FormLabel>
+            <FormLabel>Shelf Width</FormLabel>
             <Slider
               sx={{
                 width: "200px",
@@ -50,40 +48,23 @@ export const Interface = () => {
             />
           </FormControl>
         </Box>
-
-        {/* <Box className="glass" p={3}>
+        
+        <Box className="glass" p={3}>
           <FormControl>
-            <FormLabel>Table Thickness</FormLabel>
+            <FormLabel>Shelf Detph</FormLabel>
             <Slider
               sx={{
                 width: "200px",
               }}
-              min={10}
-              max={40}
-              value={tableWidth}
-              onChange={(e) => setTableWidth(e.target.value)}
+              min={50}
+              max={150}
+              value={shelfDetph}
+              onChange={(e) => setShelfDetph(e.target.value)}
               valueLabelDisplay="auto"
             />
           </FormControl>
-        </Box> */}
+        </Box>
         
-        {/* <Box className="glass" p={3}>
-          <FormControl>
-            <FormLabel>Legs Layout</FormLabel>
-            <RadioGroup
-              value={legs}
-              onChange={(e) => setLegs(parseInt(e.target.value))}
-            >
-              <FormControlLabel
-                value={0}
-                control={<Radio />}
-                label="Standard"
-              />
-              <FormControlLabel value={1} control={<Radio />} label="Solid" />
-              <FormControlLabel value={2} control={<Radio />} label="Design" />
-            </RadioGroup>
-          </FormControl>
-        </Box> */}
         <Box className="glass" p={3}>
           <FormControl>
             <FormLabel>Shelf Color</FormLabel>
@@ -92,19 +73,19 @@ export const Interface = () => {
               onChange={(e) => setShelfColor(e.target.value)}
             >
               <FormControlLabel
-                value={"#1e1e1e"}
+                value={"#2d1c12"}
                 control={<Radio />}
-                label="Brown"
+                label="Black"
               />
-              <FormControlLabel
+              {/* <FormControlLabel
                 value={"#ECECEC"}
                 control={<Radio />}
                 label="White"
-              />
+              /> */}
               <FormControlLabel
                 value={"#C9BD71"}
                 control={<Radio />}
-                label="Cream"
+                label="Brown"
               />
               {/* <FormControlLabel
                 value={"#C9A3B9"}
