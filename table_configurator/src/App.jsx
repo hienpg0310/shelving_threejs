@@ -5,10 +5,10 @@ import { Interface } from "./components/Interface";
 function App() {
   return (
     <>
-      <Canvas shadows camera={{ position: [4, 4, -12], fov: 35 }}>
+      <Canvas camera={{ position: [4, 4, 10], fov: 35 }}>
         <Experience />
       </Canvas>
-      <Interface />
+      <Interface/>
     </>
   );
 }

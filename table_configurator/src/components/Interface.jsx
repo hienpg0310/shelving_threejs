@@ -5,7 +5,7 @@ import { useConfigurator } from "../contexts/Configurator";
 
 export const Interface = () => {
 
-    const { shelfColor, setShelfColor, shelfWidth, setShelfWidth, shelfDetph, setShelfDetph, shelfHeight, setshelfHeight } = useConfigurator();
+    const { tuColor, setTuColor } = useConfigurator();
   return (
     <Box
       sx={{
@@ -17,7 +17,7 @@ export const Interface = () => {
     >
       <Stack spacing={3}>
         <Typography variant="caption">Shelf Configurator</Typography>
-        <Box className="glass" p={3}>
+        {/* <Box className="glass" p={3}>
           <FormControl>
             <FormLabel>Shelf Height</FormLabel>
             <Slider
@@ -63,35 +63,35 @@ export const Interface = () => {
               valueLabelDisplay="auto"
             />
           </FormControl>
-        </Box>
+        </Box> */}
         
         <Box className="glass" p={3}>
           <FormControl>
             <FormLabel>Shelf Color</FormLabel>
             <RadioGroup
-              value={shelfColor}
-              onChange={(e) => setShelfColor(e.target.value)}
+              value={tuColor}
+              onChange={(e) => setTuColor(e.target.value)}
             >
-              <FormControlLabel
-                value={"#2d1c12"}
+              {/* <FormControlLabel
+                value={"#CECECE"}
                 control={<Radio />}
                 label="Black"
-              />
-              {/* <FormControlLabel
+              /> */}
+              <FormControlLabel
                 value={"#ECECEC"}
                 control={<Radio />}
                 label="White"
-              /> */}
+              />
               <FormControlLabel
                 value={"#C9BD71"}
                 control={<Radio />}
                 label="Brown"
               />
-              {/* <FormControlLabel
-                value={"#C9A3B9"}
-                control={<Radio />}
-                label="Pink Gold"
-              /> */}
+                <FormControlLabel
+                  value={"#C9A3B9"}
+                  control={<Radio />}
+                  label="Pink Gold"
+                />
             </RadioGroup>
           </FormControl>
         </Box>
